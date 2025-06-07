@@ -1,48 +1,31 @@
-# 🎮 Influencer Clicker
+# Influencer Clicker
 
-Um jogo *clicker* casual onde você simula a jornada de um influenciador digital! Clique para ganhar seguidores, desbloqueie upgrades e conquiste a fama. O jogo é leve, jogável no navegador e pode ser instalado como um aplicativo (PWA).
+Um jogo clicker casual onde você começa como uma pessoa anônima e tenta conquistar a internet. Cada clique gera novos seguidores e você pode comprar upgrades para acelerar seu crescimento.
 
----
+## Como Jogar
 
-> 🚀 Tecnologias utilizadas
+1. Clique no botão principal para ganhar seguidores.
+2. Use seus seguidores e dinheiro para comprar upgrades como câmera, dancinhas virais, escândalos, bots e collabs.
+3. Evolua até se tornar o "governante da internet".
 
-- HTML5 + CSS3 + JavaScript
-- Manifesto e Service Worker (PWA)
-- Compatível com publicação gratuita no [Itch.io](https://itch.io/)
-- Pronto para instalação em dispositivos móveis
+O jogo possui sistema de cash que permite comprar upgrades premium usando a moeda do jogo.
 
+## Executar Localmente
 
-```
-## 🧪 Como executar localmente
-
-Você pode usar um servidor simples para testar o PWA no navegador:
-
+```bash
+# usando um servidor simples
 npx serve .
 ```
-Ou abra o index.html diretamente no navegador (algumas funções como o service-worker só funcionam via servidor local ou HTTPS).
 
+Acesse `http://localhost:3000` ou a porta indicada e instale o jogo como PWA no navegador.
 
+## Estrutura PWA
 
-> 📲 Instalação como app (PWA)
+- **index.html**: página principal do jogo.
+- **script.js**: lógica do jogo e registro do service worker.
+- **manifest.json**: manifesto PWA com nome e ícones (substitua os ícones em `assets/icons/`).
+- **service-worker.js**: cache offline das páginas e assets.
 
-Ao acessar o jogo pelo navegador (desktop ou mobile), você poderá instalar o app clicando em "Adicionar à tela inicial".
+## Publicação
 
---- 
-
-> 🎯 Próximos passos
-
--  [ ] Adicionar upgrades automáticos (ganho de seguidores por segundo)
-
-- [ ] Criar sistema de evolução (níveis de fama)
-
-- [ ] Adicionar sons, animações e conquistas
-
-- [ ] Integrar sistema de save local (LocalStorage)
-
-> 🧠 Ideal para
-- Publicação no Itch.io
-
-- Instalação como app gratuito
-
-- MVPs de jogos casuais sem custos de publicação
-
+Tudo está pronto para publicar no [Itch.io](https://itch.io/) ou instalar em qualquer celular como app.
