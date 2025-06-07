@@ -68,6 +68,7 @@ function init() {
   const gender = localStorage.getItem("gender");
   if (!gender) {
     selectScreen.classList.remove("hidden");
+    gameScreen.classList.add("hidden");
     selectedGender = null;
     confirmBtn.disabled = true;
     document.getElementById("btn-female").classList.remove("selected");
