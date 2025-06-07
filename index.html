@@ -1,23 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Influencer Clicker</title>
-  <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div id="game">
-    <h1>Influencer Clicker</h1>
-    <div class="stats">
-      <p>Seguidores: <span id="followers">0</span></p>
-      <p>Cash: $<span id="cash">0</span></p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Influencer Clicker</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="floating-icons">
+      <span>❤️</span>
+      <span>😃</span>
+      <span>👥</span>
     </div>
-    <button id="click-btn">Ganhar Seguidores</button>
-    <h2>Upgrades</h2>
-    <ul id="upgrades"></ul>
-  </div>
-  <script src="script.js"></script>
-</body>
+
+    <div id="select-gender" class="hidden">
+      <h2>Escolha seu personagem</h2>
+      <div class="gender-options">
+        <button id="btn-female">👩 Criadora</button>
+        <button id="btn-male">👨 Criador</button>
+      </div>
+      <button id="confirm-btn" disabled>Entrar</button>
+    </div>
+
+    <div id="game" class="hidden">
+      <div class="main-column">
+        <h1 class="title">Influencer Clicker</h1>
+        <div class="counter"><span id="followers">0</span> seguidores</div>
+        <img id="character" src="" alt="Avatar" />
+        <button id="click-btn">GANHAR SEGUIDORES</button>
+      </div>
+      <div class="upgrade-column">
+        <ul id="upgrades"></ul>
+      </div>
+      <div class="income">
+        +<span id="per-click">1</span>/clique –
+        <span id="per-sec">0</span>/segundo
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
