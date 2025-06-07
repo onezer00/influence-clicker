@@ -6,6 +6,9 @@ const perSecSpan = document.getElementById("per-sec");
 const characterImg = document.getElementById("character");
 const clickBtn = document.getElementById("click-btn");
 const upgradesList = document.getElementById("upgrades");
+const confirmBtn = document.getElementById("confirm-btn");
+
+let selectedGender = null;
 
 let followers = 0;
 let perClick = 1;
@@ -64,13 +67,29 @@ function init() {
   const gender = localStorage.getItem("gender");
   if (!gender) {
     selectScreen.classList.remove("hidden");
+    selectedGender = null;
+    confirmBtn.disabled = true;
+    document.getElementById("btn-female").classList.remove("selected");
+    document.getElementById("btn-male").classList.remove("selected");
   } else {
     showGame();
   }
 }
 
 function chooseGender(g) {
-  localStorage.setItem("gender", g);
+  selectedGender = g;
+  document
+    .getElementById("btn-female")
+    .classList.toggle("selected", g === "female");
+  document
+    .getElementById("btn-male")
+    .classList.toggle("selected", g === "male");
+  confirmBtn.disabled = false;
+}
+
+function confirmGender() {
+  if (!selectedGender) return;
+  localStorage.setItem("gender", selectedGender);
   selectScreen.classList.add("hidden");
   showGame();
 }
@@ -81,6 +100,7 @@ document
 document
   .getElementById("btn-male")
   .addEventListener("click", () => chooseGender("male"));
+confirmBtn.addEventListener("click", confirmGender);
 
 clickBtn.addEventListener("click", () => {
   followers += perClick;
