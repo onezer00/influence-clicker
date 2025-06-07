@@ -60,6 +60,7 @@ function showGame() {
   if (gender && avatars[gender]) {
     characterImg.src = avatars[gender];
   }
+  selectScreen.classList.add("hidden");
   gameScreen.classList.remove("hidden");
 }
 
@@ -90,7 +91,6 @@ function chooseGender(g) {
 function confirmGender() {
   if (!selectedGender) return;
   localStorage.setItem("gender", selectedGender);
-  selectScreen.classList.add("hidden");
   showGame();
 }
 
